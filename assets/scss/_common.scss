@@ -1,7 +1,7 @@
 /* for wrapper */
 .wrapper {
   max-width: 1360px;
-  width: 81%; 
+  width: 94%; 
   margin: 0 auto;
 }
 
@@ -17,4 +17,13 @@ img {
 
 html {
   &.stop-scroll { overflow: hidden; }
+}
+
+
+h2 {
+  padding: 20px 0;
+  font-size: $large + 4;
+  color: $lightblack;
+  text-align: center;
+  background-color: $red;
 }

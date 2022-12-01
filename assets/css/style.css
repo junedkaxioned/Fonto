@@ -1,12 +1,4 @@
-@charset "utf-8";
-/* ==========================================================================
-   1. CSS Reset Code
-   ========================================================================== */
-
-/* 1.1. Eric Meyers Reset
-   http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain) ============================================ */
+/* Reset CSS */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
 ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
@@ -29,15 +21,19 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* Force scrollbar */
-html { overflow-y: scroll; }
+html {
+  overflow-y: scroll;
+}
 
 /* Align radios and text inputs with their label */
-input[type='radio'] { vertical-align: text-bottom; }
+input[type=radio] {
+  vertical-align: text-bottom;
+}
 
 /* Hand cursor on clickable input elements */
 label,
-input[type='button'],
-input[type='submit'],
+input[type=button],
+input[type=submit],
 button {
   cursor: pointer;
 }
@@ -48,7 +44,9 @@ strong {
   font-size: inherit;
 }
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
 img {
   width: 100%;
@@ -64,29 +62,38 @@ sup {
   line-height: 0;
 }
 
-sup { top: -.7em; }
-sub { bottom: -.25em; }
+sup {
+  top: -0.7em;
+}
+
+sub {
+  bottom: -0.25em;
+}
 
 /* 1.2. Clear Fix ========================== */
-
 .cf:before,
 .cf:after {
   display: table;
   content: " ";
 }
 
-.cf:after { clear: both; }
-.cf { *zoom: 1; }
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
 
 /*for all*/
 body {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-a { 
+a {
   display: inline-block;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 li {
@@ -97,40 +104,141 @@ li {
 /* for wrapper */
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 94%;
   margin: 0 auto;
 }
 
-/*=================================
-  Header styling starts here
-=================================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
 
+html.stop-scroll {
+  overflow: hidden;
+}
 
-/*=================================
-  Header styling ends here
-=================================*/  
+h2 {
+  padding: 20px 0;
+  font-size: 56px;
+  color: #1C1C1C;
+  text-align: center;
+  background-color: #F98181;
+}
 
-/*=================================
-  main styling starts here
-=================================*/
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+header .wrapper {
+  padding: 30px 0 32px;
+  border-bottom: 2px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.nav-search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.navlist {
+  margin-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.list {
+  margin: 0 20px;
+  position: relative;
+}
+.list a {
+  font-weight: 600;
+  text-transform: capitalize;
+}
 
+.portfolio, .shop, .blog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.portfolio::after, .shop::after, .blog::after {
+  content: "\f078";
+  font-family: "FontAwesome";
+  font-size: 8px;
+  margin-left: 10px;
+}
 
+.cart, .search {
+  padding-right: 14px;
+  text-indent: -99999px;
+}
+.cart::before, .search::before {
+  content: "\f290";
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 34px;
+  float: left;
+  text-indent: 0;
+}
 
-/*=================================
-  main styling ends here
-=================================*/
+.search::before {
+  content: "\f002";
+  font-size: 16px;
+}
 
-/*=================================
-  footer styling starts here
-=================================*/ 
+header a {
+  color: #fff;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+@media only screen and (min-width: 995px) {
+  header a:hover {
+    color: #F98181;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 995px) {
+  .list {
+    margin: 0 10px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header .navbar {
+    display: none;
+  }
+}
 
-
-
- /*=================================
-  footer styling ends here
-=================================*/ 
-
-/*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {}  
+/*# sourceMappingURL=style.css.map */

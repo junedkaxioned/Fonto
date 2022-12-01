@@ -1,0 +1,105 @@
+// Header CSS Start
+header {
+  width: 100%;
+  @include positions (fixed, $top:0);
+
+  .wrapper {
+    padding: 30px 0 32px;
+    border-bottom: 2px solid $white;
+    @include flexbox (flex, center, $justify: space-between);
+
+    @at-root {
+
+      .nav-search-container {
+        @include flexbox (flex, flex-end, $justify: space-between);
+
+        @at-root {
+          .navlist {
+            margin-right: 15px;
+            @include flexbox (flex, center, $justify: space-between);
+
+            @at-root {
+
+              .list {
+                margin: 0 20px;
+                position: relative;
+
+                a {
+                  font-weight: $semi-bold;
+                  text-transform: capitalize;
+                }
+              }
+              .portfolio {
+                @include flexbox (flex, center);
+                &::after {
+                  @include  icons ("\f078", $font:$extra-small - 4);
+                  margin-left: 10px;
+                }
+              }  
+              .blog {
+                @extend .portfolio;
+              }
+              .shop {
+                @extend .portfolio;
+              }
+            } 
+          }
+
+          .cart {
+            padding-right: 14px;
+            text-indent: -99999px;
+
+            &::before {
+              @include icons ("\f290", $white, $large-small + 2);
+              float: left;
+              text-indent: 0;
+            }
+          }
+
+          .search {
+            @extend .cart;
+
+            &::before {
+              content: "\f002";
+              font-size: $normal-font;
+            }
+          }
+        }
+      }
+
+    }
+
+  } 
+  a {
+    color: $white;
+    @include transition (.5s);
+
+  }
+
+
+// Responsive banner Section Start
+  @include responsiveMin (995px) {
+    a {
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  @include responsiveMinMax (768px, 995px) {
+    @at-root .list {
+      margin: 0 10px;
+    }
+  }
+
+  @include responsiveMax(768px) {
+    .navbar {
+      display: none;
+    }
+  }
+
+
+// Responsive banner Section End
+} 
+
+// Header CSS End
