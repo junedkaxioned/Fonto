@@ -19,11 +19,14 @@ html {
   &.stop-scroll { overflow: hidden; }
 }
 
+.d-none { display: none; }
+
 
 h2 {
   padding: 20px 0;
   font-size: $large + 4;
   color: $lightblack;
   text-align: center;
-  background-color: $red;
+  font-style: italic;
+  // background-color: $red;
 }

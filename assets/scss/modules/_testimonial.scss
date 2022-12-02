@@ -1,0 +1,173 @@
+.testimonial-section {
+  padding: 20px 0 35px;
+  background-color: $lightblack;
+  
+  .wrapper {
+    @at-root .testimonials {
+
+      @at-root .reviews {
+        @include flexbox(flex, center);
+
+        @at-root .review {
+          padding: 38px 20px  45px 170px;
+
+          p {
+            color: $white;
+            font-size: $large-small;
+            font-style: italic;
+            line-height: 1.5;
+          }
+        }
+
+        figure {
+          padding: 32px 70px 0;
+          @include flexbox(flex, center, column,$justify:center);
+
+          img {
+            width: auto;
+            border-radius: 50%;
+          }
+
+          figcaption {
+            text-align: center;
+
+            @at-root .name {
+              margin: 16px 0 5px;
+              display: block;
+              color: $white;
+              font-size: $medium-font + 2;
+            }
+
+          }
+        }
+
+        a {
+          color: $red;
+        }
+      }
+
+
+    }
+    
+    @at-root .slider-btn-container {
+      padding: 0 155px;
+      @include flexbox(flex, center, $justify:space-between);
+
+
+      @at-root {
+        .prev-btn {
+          margin-right: 6px;
+          text-indent: -99999px;
+        
+          &::before {
+            @include  icons ("\f100", $red, $extra-small);
+            width: 28px;
+            height: 28px;
+            border: 1px solid $red;
+            @include flexbox(flex, center, $justify:center);
+            float: left;
+            text-indent: 0;
+            @include  transition (.5s);
+          }
+
+          &:hover::before {
+            background-color: $red;
+            color: $white;
+          }
+        }
+
+        .next-btn {
+          @extend .prev-btn;
+
+          &::before{
+            content:"\f101";
+          }
+        }
+      }
+
+      @at-root .indicators {
+        margin: 15px 0 0;
+        width: 55%;
+
+        .dots {
+          width: 10px;
+          height: 10px;
+          border: 1px solid $red;
+          border-radius: 50%;
+          margin-right: 6px;
+          display: inline-block;
+          background-color: transparent;
+          cursor: pointer;
+          text-indent: -99999px;
+          @include  transition (.5s);
+
+          &:hover {
+            background-color: $red;
+          }
+
+          &.active {
+            background-color: $red  ;
+          }
+        }
+      }
+    }
+  } 
+
+  @include responsiveMinMax (1024px, 1280px) {
+    @at-root .reviews {
+
+      @at-root .review {
+        padding-left: 100px; 
+      }
+
+      figure {
+        padding: 0 35px;
+      }
+    }
+
+    @at-root .slider-btn-container {
+      padding: 0 100px;
+    }
+
+  }
+
+  @include responsiveMinMax (995px, 1024px) {
+    @at-root .reviews {
+
+      @at-root .review {
+        padding-left: 50px; 
+      }
+
+      figure {
+        padding: 0 30px;
+      }
+    }
+
+    @at-root .slider-btn-container {
+      padding: 0 50px;
+    }
+
+  }
+  @include responsiveMinMax (768px, 995px) {
+    @at-root .reviews {
+
+      @at-root .review {
+        padding-left: 15px;
+        padding-right: 15px; 
+
+        p {
+          font-size: $medium-large;
+        }
+      }
+
+      figure {
+        padding: 0 15px;
+      }
+    }
+
+    @at-root .slider-btn-container {
+      padding: 0 20px;
+    }
+
+  }
+}

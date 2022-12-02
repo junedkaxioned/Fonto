@@ -1,0 +1,37 @@
+.author-design {
+  padding: 80px 0;
+  background-color: $grey;
+
+  @at-root .authors {
+    padding: 40px 0 100px;
+    @include flexbox (flex, center, $wrap:wrap, $justify:center);
+    gap: 30px 54px;
+
+    @at-root .author {
+      margin: 0 auto;
+      text-align: center;
+
+      img {
+        border-radius: 50%;
+      }
+
+      @at-root .author-name a {
+        padding: 10px 0 5px;
+        font-size: $medium-font;
+        color: $lightblack;
+        text-transform: capitalize;
+      }
+
+      @at-root .occupation {
+        color: $white;
+      }
+
+    }
+
+  }
+
+  @at-root .designs-card {
+    padding: 80px 0;
+    @include flexbox (flex, center, $wrap:wrap, $justify:center);
+  }
+}
