@@ -1,0 +1,156 @@
+// Header CSS Start
+header {
+  width: 100%;
+  @include positions (fixed, $top:0);
+
+  .wrapper {
+    padding: 30px 0 32px;
+    border-bottom: 2px solid $white;
+    @include flexbox (flex, center, $justify: space-between);
+
+    @at-root {
+
+      .nav-search-container {
+        @include flexbox (flex, flex-end, $justify: space-between);
+
+        @at-root {
+          .navlist {
+            margin-right: 15px;
+            @include flexbox (flex, center, $justify: space-between);
+
+            @at-root {
+
+              .list {
+                margin: 0 20px;
+                position: relative;
+
+                a {
+                  font-weight: $semi-bold;
+                  text-transform: capitalize;
+                }
+              }
+              .portfolio {
+                @include flexbox (flex, center);
+                &::after {
+                  @include  icons ("\f078", $font:$extra-small - 4);
+                  margin-left: 10px;
+                }
+              }  
+              .blog {
+                @extend .portfolio;
+              }
+              .shop {
+                @extend .portfolio;
+              }
+            } 
+          }
+
+          .cart {
+            padding-right: 14px;
+            text-indent: -99999px;
+
+            &::before {
+              @include icons ("\f290", $white, $large-small + 2);
+              float: left;
+              text-indent: 0;
+            }
+          }
+
+          .search {
+            @extend .cart;
+
+            &::before {
+              content: "\f002";
+              font-size: $normal-font;
+            }
+          }
+        }
+      }
+
+      .hamburger {
+        width: 45px;
+        height: 45px;
+        border-radius: 2px;
+        display: none;
+        @include positions(relative, 2);
+        background-color: $red;
+        cursor: pointer;
+  
+        .bar {
+          width: 40%;
+          height: 2.5px;
+          border-radius: 5px;
+          @include positions(absolute, $left: 30%);
+          background: $white;
+          text-indent: -99999px;
+          @include transition (.5s);
+  
+          &:nth-child(1) {
+            top: 40%;
+          }
+  
+          &:nth-child(2) {
+            top: 50%;
+          }
+  
+          &:nth-child(3) {
+            top: 60%;
+          }
+        }
+  
+        &.active {
+          .bar {
+            &:nth-child(1) {
+              @include transform (translateY(2px) rotate(-45deg));
+            }
+  
+            &:nth-child(2) {
+              opacity: 0;
+            }
+  
+            &:nth-child(3) {
+              @include transform (translateY(-7px) rotate(45deg));
+            }
+          }
+        }
+      }
+
+    }
+
+  } 
+  a {
+    color: $white;
+    @include transition (.5s);
+  }
+
+
+// Responsive banner Section Start
+  @include responsiveMin (995px) {
+    a {
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  @include responsiveMinMax (768px, 995px) {
+    @at-root .list {
+      margin: 0 10px;
+    }
+  }
+
+  @include responsiveMax(768px) {
+    .navbar {
+      display: none;
+    }
+  }
+
+  @include responsiveMax (768px) {
+    @at-root .hamburger {
+      display: block;
+    }
+  }
+// Responsive banner Section End
+} 
+
+// Header CSS End

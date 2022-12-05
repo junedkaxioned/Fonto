@@ -1,0 +1,77 @@
+.author-design {
+  padding: 80px 0 65px;
+  background-color: $grey;
+
+  @at-root .authors {
+    padding: 40px 0 100px;
+    @include flexbox (flex, center, $wrap:wrap, $justify:center);
+    gap: 30px 54px;
+
+    @at-root .author {
+      margin: 0 auto;
+      text-align: center;
+
+      img {
+        border-radius: 50%;
+      }
+
+      @at-root .author-name a {
+        padding: 10px 0 5px;
+        font-size: $medium-font;
+        color: $lightblack;
+        text-transform: capitalize;
+      }
+
+      @at-root .occupation {
+        color: $white;
+      }
+
+    }
+
+  }
+
+  @at-root .designs-card {
+    padding: 50px 0;
+    @include flexbox (flex, center, $wrap:wrap, $justify:center);
+
+
+    @at-root .card {
+      margin-top: 30px;
+      margin-right: 30px;
+      box-shadow: 5px 5px 1px rgba($lightblack, .15);
+
+      figcaption {
+        padding: 14px;
+        background-color: $white;
+
+        @at-root .design-name a {
+          padding: 8px 0;
+          color: $lightblack;
+          font-weight: $semi-bold;
+          text-transform: capitalize;
+        }
+
+        @at-root .price {
+          padding: 8px 0 16px;
+          display: block;
+          color: $red;
+          font-size: $small;
+          font-weight: $semi-bold;
+
+        }
+
+
+        @at-root .read-more {
+          @extend .price;
+          color: $lightblack;
+          text-transform: uppercase;
+        }
+
+        @at-root .line-through {
+          color: $grey;
+          text-decoration: line-through $red;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+footer {
+  padding: 44px 0 0;
+  background-color: $lightblack;
+  color: $white;
+
+  a {
+    color: $white;
+    @include transition (.5s);
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  h4 {
+    padding: 20px 0 16px;
+    font-weight: $bold;
+    text-transform: uppercase;
+  }
+
+  @at-root .footer-container {
+    padding: 0 0 130px;
+    @include flexbox (flex, $justify:space-between);
+
+    @at-root .about {
+      @include flex-basis (33.3%);
+
+      p {
+        max-width: 360px;
+        width: 100%;
+        font-size: $normal-font;
+        line-height: 1.5;
+      }
+    }
+
+
+    li {
+      &:nth-child(2) {
+        @include flex-basis (33.5%);
+      }
+
+      &:nth-child(3) {
+        @include flex-basis (29%);
+
+        img {
+          width: auto;
+        }
+
+      }
+    }
+  }
+
+  @at-root .bottom-footer {
+    background-color: $black;
+
+    .wrapper {
+      @include flexbox (flex, center, $justify:space-between)
+    }
+
+    @at-root .social-icons {
+      padding: 5px 0;
+
+      @at-root .icon a {
+        margin-right: 15px;
+        text-indent: -99999px;
+
+        &::before {
+          float: left;
+          font-family: "FontAwesome";
+          font-size: $medium-font;
+          text-indent: 0;
+        }
+      }
+
+      @include icons-content ($social-icons);
+    }
+
+    @at-root .privacy {
+      padding-right: 10px;
+      border-right: 1px solid $grey;
+      color: $grey;
+      font-size: $extra-small;
+      text-transform: capitalize;
+    }
+
+    @at-root .term-service {
+      @extend .privacy;
+      padding-left: 5px;
+      padding-right: 0;
+      border: none;
+    }
+  }
+
+
+  @include responsiveMax(540px) {
+    .footer-container {
+      @include flex-direction (column);
+
+      li {
+        margin-top: 25px;
+      }
+    }
+
+    .bottom-footer {
+      .wrapper {
+        @include flex-direction (column);
+      }
+    }
+  }
+}
