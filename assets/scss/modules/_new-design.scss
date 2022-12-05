@@ -27,4 +27,10 @@
       grid-row: span 2;
     }
   }
+
+  @include responsiveMinMax (995px, 1100px) {
+    .grid-item {
+      grid-column: span 1;
+    } 
+  }
 }

@@ -1,5 +1,5 @@
 .author-design {
-  padding: 80px 0;
+  padding: 80px 0 65px;
   background-color: $grey;
 
   @at-root .authors {
@@ -31,7 +31,47 @@
   }
 
   @at-root .designs-card {
-    padding: 80px 0;
+    padding: 50px 0;
     @include flexbox (flex, center, $wrap:wrap, $justify:center);
+
+
+    @at-root .card {
+      margin-top: 30px;
+      margin-right: 30px;
+      box-shadow: 5px 5px 1px rgba($lightblack, .15);
+
+      figcaption {
+        padding: 14px;
+        background-color: $white;
+
+        @at-root .design-name a {
+          padding: 8px 0;
+          color: $lightblack;
+          font-weight: $semi-bold;
+          text-transform: capitalize;
+        }
+
+        @at-root .price {
+          padding: 8px 0 16px;
+          display: block;
+          color: $red;
+          font-size: $small;
+          font-weight: $semi-bold;
+
+        }
+
+
+        @at-root .read-more {
+          @extend .price;
+          color: $lightblack;
+          text-transform: uppercase;
+        }
+
+        @at-root .line-through {
+          color: $grey;
+          text-decoration: line-through $red;
+        }
+      }
+    }
   }
 }

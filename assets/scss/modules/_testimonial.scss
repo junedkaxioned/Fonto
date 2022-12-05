@@ -170,4 +170,22 @@
     }
 
   }
+
+  @include responsiveMax (768px) {
+    @at-root .reviews {
+      @include flex-direction (column-reverse);
+      text-align: center;
+
+      @at-root .review {
+        padding: 60px  30px;
+      }
+    }
+
+    @at-root .slider-btn-container {
+        padding: 0 30px;
+    }
+    @at-root .indicators {
+      width: auto;
+    }
+  }
 }
